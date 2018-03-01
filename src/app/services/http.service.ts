@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  url = 'http://localhost:8889';
+  url = environment.apiUrl;
 
   get(path: string, authorized: boolean = true): Observable<any> {
     return this.http.get(`${this.url}${path}.json`, { withCredentials: authorized });

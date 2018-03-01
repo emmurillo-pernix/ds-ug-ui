@@ -1,0 +1,7 @@
+npm install -g angular-cli
+echo '>>> Building dist'
+npm run build:prod
+
+echo '>>> Running web.js'
+node web.js
+
