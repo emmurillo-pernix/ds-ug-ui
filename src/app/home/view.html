@@ -1,0 +1,53 @@
+<div class="activity-box d-flex flex-column m-5 p-5">
+
+	<div class="entry-group">
+		<p class="entry-group-type">Review</p>
+		<task-slot *ngFor="let task of reviewTasks" [task]="task" [readOnly]="true"></task-slot>
+		<task-slot (onTaskAdded)="addReviewTask($event)"></task-slot>
+	</div>
+
+	<div class="entry-group">
+		<p class="entry-group-type">Goals</p>
+		<task-slot *ngFor="let task of goalTasks" [task]="task" [readOnly]="true"></task-slot>
+		<task-slot (onTaskAdded)="addGoalsTask($event)"></task-slot>
+	</div>
+
+	<div class="entry-group">
+		<p class="entry-group-type">Blockers</p>
+		<task-slot *ngFor="let blocker of blockers" [task]="blocker" [readOnly]="true"></task-slot>
+		<task-slot (onTaskAdded)="addBlocker($event)"></task-slot>
+	</div>
+
+	<div class="entry-group">
+			<p class="entry-group-type">BV</p>
+			<task-slot *ngFor="let bv of bvs" [task]="bv" [readOnly]="true"></task-slot>
+			<task-slot (onTaskAdded)="addBusinessValue($event)"></task-slot>
+		</div>
+
+	<!--<div class="entry-group">
+		<p class="entry-group-type">Goals</p>
+		<task-slot></task-slot>
+	</div>
+
+	<div class="entry-group">
+		<p class="entry-group-type">Blockers</p>
+		<task-slot></task-slot>
+	</div>
+
+	<div class="entry-group">
+		<p class="entry-group-type">Business Value</p>
+		<task-slot></task-slot>
+	</div>-->
+</div>
+
+<div class="result-box d-flex flex-column m-5 p-5">
+	<span>*Review:*</span>
+	<span *ngFor="let task of reviewTasks"> - `{{ task.project_code }}<span *ngIf="task.number">-{{ task.number }}</span>`: {{ task.description}}</span>
+	<span>*Goals:*</span>
+	<span *ngFor="let task of goalTasks"> - `{{ task.project_code }}<span *ngIf="task.number">-{{ task.number }}</span>`: {{ task.description}}</span>
+	<span>*Blockers:*</span>
+	<span *ngIf="!blockers.length">- None</span>
+	<span *ngFor="let blocker of blockers"> - `{{ blocker.project_code }}<span *ngIf="blocker.number">-{{ blocker.number }}</span>`: {{ blocker.description}}</span>
+	<span>*BV:*</span>
+	<span *ngFor="let bv of bvs"> - `{{ bv.project_code }}<span *ngIf="bv.number">-{{ bv.number }}</span>`: {{ bv.description}}</span>
+</div>

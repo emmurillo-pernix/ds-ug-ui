@@ -1,0 +1,24 @@
+task-slot {
+	display: block;
+	margin-bottom: 1em;
+
+	form.activity-entry {
+		display: flex;
+
+		input#project-code, input#project {
+			width: 150px;
+		}
+
+		input#task-number {
+			width: 100px;
+		}
+
+		input#description {
+			flex-grow: 1; // Take the rest of the space
+		}
+
+		.btn {
+			margin-right: 5px;
+		}
+	}
+}

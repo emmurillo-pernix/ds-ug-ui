@@ -1,0 +1,29 @@
+
+<form [formGroup]="taskForm" class="form-inline activity-entry" (ngSubmit)="addTask()">
+	<label class="sr-only" for="project-code">Project Code</label>
+	<select class="form-control mb-2 mr-sm-2 mb-sm-0" id="project-code" formControlName="projectCode">
+		<option [ngValue]="null" disabled>Project</option>
+		<option *ngFor="let project of projects" [value]="project.project.code">{{ project.project.name }}</option>
+	</select>
+
+	<span>- &nbsp;</span>
+
+	<label class="sr-only" for="task-number">Task #</label>
+	<input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" id="task-number" placeholder="#" formControlName="taskNumber">
+
+	<label class="sr-only" for="description">Description</label>
+	<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="description" placeholder="Description"  formControlName="description">
+
+	<div *ngIf="!readOnly">
+		<button class="btn btn-primary" type="submit" [disabled]="taskForm.invalid">
+				<svg id="i-plus" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+					<path d="M16 2 L16 30 M2 16 L30 16" />
+				</svg>
+			</button>
+			<button class="btn btn-danger">
+				<svg id="i-trash" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+					<path d="M28 6 L6 6 8 30 24 30 26 6 4 6 M16 12 L16 24 M21 12 L20 24 M11 12 L12 24 M12 6 L13 2 19 2 20 6" />
+				</svg>
+			</button>
+	</div>
+</form>

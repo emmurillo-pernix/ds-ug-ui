@@ -1,0 +1,18 @@
+home {
+	.activity-box, .result-box {
+		background-color: lightgray;
+		border: 1px solid gray;
+	}
+
+	.activity-box {
+		div.entry-group:not(:last-child) {
+			margin-bottom: 2em;
+		}
+
+		div.entry-group {
+			p.entry-group-type {
+				font-size: xx-large;
+			}
+		}
+	}
+}
