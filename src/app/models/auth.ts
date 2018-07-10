@@ -1,5 +1,5 @@
 interface AuthResponse {
-	auth_token: string;
+  auth_token: string;
 }
 
 interface Credentials {
@@ -7,4 +7,4 @@ interface Credentials {
   password: string;
 }
 
-export { AuthResponse, Credentials }
+export { AuthResponse, Credentials };

@@ -6,10 +6,9 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ProjectsService {
-	constructor(private http: HttpService) { }
+  constructor(private http: HttpService) { }
 
-	getProjectsByWorker(): Observable<ProjectByWorker[]> {
-		return this.http.get('/projects');
-	};
+  getProjectsByWorker(): Observable<ProjectByWorker[]> {
+    return this.http.get('/projects');
+  }
 }
-

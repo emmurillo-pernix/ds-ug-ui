@@ -1,8 +1,7 @@
 interface Task {
-	project_code: string,
-	number: number,
-	description: string
+  project_code: string;
+  number: number;
+  description: string;
 }
 
-
-export { Task }
+export { Task };

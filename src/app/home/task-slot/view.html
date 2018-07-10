@@ -3,7 +3,7 @@
 	<label class="sr-only" for="project-code">Project Code</label>
 	<select class="form-control mb-2 mr-sm-2 mb-sm-0" id="project-code" formControlName="projectCode">
 		<option [ngValue]="null" disabled>Project</option>
-		<option *ngFor="let project of projects" [value]="project.project.code">{{ project.project.name }}</option>
+		<option *ngFor="let project of projects" [value]="project.code">{{ project.name }}</option>
 	</select>
 
 	<span>- &nbsp;</span>
@@ -13,6 +13,14 @@
 
 	<label class="sr-only" for="description">Description</label>
 	<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="description" placeholder="Description"  formControlName="description">
+
+	<div *ngIf="readOnly">
+		<button class="btn btn-outline-secondary">
+				<svg id="i-edit" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+					<path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z" />
+			</svg>
+		</button>
+	</div>
 
 	<div *ngIf="!readOnly">
 		<button class="btn btn-primary" type="submit" [disabled]="taskForm.invalid">

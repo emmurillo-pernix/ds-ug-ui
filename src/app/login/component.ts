@@ -1,8 +1,8 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from "../services/auth/service";
-import { AuthStore } from "../services/auth/store";
-import { AuthResponse, Credentials } from "../models/auth";
+import { AuthService } from '../services/auth/service';
+import { AuthStore } from '../services/auth/store';
+import { AuthResponse, Credentials } from '../models/auth';
 
 @Component({ templateUrl: 'view.html' })
 export class LoginComponent {
@@ -17,6 +17,6 @@ export class LoginComponent {
 
   private handleAuthSuccess = (response: AuthResponse) => {
     this.authStore.setAuth(response);
-    this.router.navigate([''])
+    this.router.navigate(['']);
   }
 }

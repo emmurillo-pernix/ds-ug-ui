@@ -5,9 +5,9 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
-	constructor(private http: HttpService) { }
+  constructor(private http: HttpService) { }
 
-	authenticate(credentials: Credentials): Observable<AuthResponse> {
-		return this.http.post('/authenticate', credentials, false);
-	}
+  authenticate(credentials: Credentials): Observable<AuthResponse> {
+    return this.http.post('/authenticate', credentials, false);
+  }
 }

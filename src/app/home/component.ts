@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from "@angular/core";
-import { ProjectsService } from "../services/projects/service";
-import { ProjectByWorker } from "../models/projects";
-import { Task } from "../models/tasks";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { ProjectsService } from '../services/projects/service';
+import { ProjectByWorker } from '../models/projects';
+import { Task } from '../models/tasks';
 
 @Component({
   templateUrl: 'view.html',
